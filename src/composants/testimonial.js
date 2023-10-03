@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 
 function PageTitle() {
+
     return (
         <section class="section testimonial">
             <div class="container">
