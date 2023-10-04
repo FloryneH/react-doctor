@@ -5,42 +5,47 @@ import about3 from '../assets/images/about/about-3.jpg';
 import about4 from '../assets/images/about/about-4.jpg';
 
 function FetaurePage() {
-  return (
-    <section class="fetaure-page ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="about-block-item mb-5 mb-lg-0">
-                        <img src={about1} alt="" class="img-fluid w-100"/>
-                        <h4 class="mt-3">Healthcare for Kids</h4>
-                        <p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="about-block-item mb-5 mb-lg-0">
-                        <img src={about2} alt="" class="img-fluid w-100"/>
-                        <h4 class="mt-3">Medical Counseling</h4>
-                        <p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="about-block-item mb-5 mb-lg-0">
-                        <img src={about3} alt="" class="img-fluid w-100"/>
-                        <h4 class="mt-3">Modern Equipments</h4>
-                        <p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="about-block-item">
-                        <img src={about4} alt="" class="img-fluid w-100"/>
-                        <h4 class="mt-3">Qualified Doctors</h4>
-                        <p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-                    </div>
+    const features = [
+        {
+            icon: about1,
+            title: 'Healthcare for Kids',
+            content: 'Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .',
+        },
+        {
+            icon: about2,
+            title: 'Medical Counseling',
+            content: 'Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .',
+        },
+        {
+            icon: about3,
+            title: 'Modern Equipments',
+            content: 'Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .',
+        },
+        {
+            icon: about4,
+            title: 'Best Doctors',
+            content: 'Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .',
+        }
+    ]
+    return (
+        <section class="fetaure-page ">
+            <div class="container">
+                <div class="row">
+                    {features.map((feature, index) => {
+                        return (
+                            <div class="col-lg-3 col-md-6">
+                                <div class="about-block-item mb-5 mb-lg-0">
+                                    <img src={feature.icon} alt="" class="img-fluid w-100"/>
+                                    <h4 class="mt-3">{feature.title}</h4>
+                                    <p>{feature.content}</p>
+                                </div>
+                            </div>
+                        );
+                        })}                    
                 </div>
             </div>
-        </div>
-    </section>
-  );
+        </section>
+    );
 }
 
 export default FetaurePage;

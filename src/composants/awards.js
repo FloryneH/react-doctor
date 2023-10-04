@@ -7,47 +7,46 @@ import award4 from '../assets/images/about/4.png';
 import award5 from '../assets/images/about/5.png';
 import award6 from '../assets/images/about/6.png';
 
-function Awards() {
+function Awards({ title }) {
+    const awards = [
+        {
+            icon: award1,
+        },
+        {
+            icon: award2,
+        },
+        {
+            icon: award3,
+        },
+        {
+            icon: award4,
+        },
+        {
+            icon: award5,
+        },
+        {
+            icon: award6,
+        },
+    ]
     return (
-        <section class="section awards">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4">
-                        <h2 class="title-color">Our Doctors achievements </h2>
-                        <div class="divider mt-4 mb-5 mb-lg-0"></div>
+        <section className="section awards">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-4">
+                        <h2 className="title-color">{title}</h2>
+                        <div className="divider mt-4 mb-5 mb-lg-0"></div>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="award-img">
-                                    <img src={award3} alt="" class="img-fluid"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="award-img">
-                                    <img src={award4} alt="" class="img-fluid"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="award-img">
-                                    <img src={award1} alt="" class="img-fluid"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="award-img">
-                                    <img src={award2} alt="" class="img-fluid"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="award-img">
-                                    <img src={award5} alt="" class="img-fluid"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="award-img">
-                                    <img src={award6} alt="" class="img-fluid"/>
-                                </div>
-                            </div>
+                    <div className="col-lg-8">
+                        <div className="row">
+                            {awards.map((award, index) => {
+                                return (
+                                    <div className="col-lg-4 col-md-6 col-sm-6">
+                                        <div className="award-img">
+                                            <img src={award.icon} alt="" className="img-fluid"/>
+                                        </div>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>

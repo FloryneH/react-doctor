@@ -1,7 +1,79 @@
 import React, { useEffect } from 'react';
+import Slider from 'react-slick';
+import '../plugins/slick-carousel/slick/slick.css';
+import '../plugins/slick-carousel/slick/slick-theme.css';
 
 
 function PageTitle() {
+    const testimonial = [
+        {
+            title: 'Amazing service !',
+            author: 'John Partho',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Expert doctors !',
+            author: 'Mullar Sarth',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Good Support !',
+            author: 'Kolis Mullar',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Nice Environment !',
+            author: 'Partho Sarothi',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Modern Service !',
+            author: 'Kolis Mullar',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        }
+    ];
+    
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+		autoplaySpeed: 6000,
+		responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow:1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
     return (
         <section class="section testimonial">
@@ -14,65 +86,29 @@ function PageTitle() {
                         </div>
                     </div>
                 </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-6 testimonial-wrap offset-lg-6">
-                        <div class="testimonial-block">
-                            <div class="client-info ">
-                                <h4>Amazing service!</h4>
-                                <span>John Partho</span>
-                            </div>
-                            <p>
-                                They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.
-                            </p>
-                            <i class="icofont-quote-right"></i>
-                            
-                        </div>
-
-                        <div class="testimonial-block">
-                            <div class="client-info">
-                                <h4>Expert doctors!</h4>
-                                <span>Mullar Sarth</span>
-                            </div>
-                            <p>
-                                They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.
-                            </p>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-
-                        <div class="testimonial-block">
-                            <div class="client-info">
-                                <h4>Good Support!</h4>
-                                <span>Kolis Mullar</span>
-                            </div>
-                            <p>
-                                They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.
-                            </p>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-
-                        <div class="testimonial-block">
-                            <div class="client-info">
-                                <h4>Nice Environment!</h4>
-                                <span>Partho Sarothi</span>
-                            </div>
-                            <p>
-                                They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.
-                            </p>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-
-                        <div class="testimonial-block">
-                            <div class="client-info">
-                                <h4>Modern Service!</h4>
-                                <span>Kolis Mullar</span>
-                            </div>
-                            <p>
-                                They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.
-                            </p>
-                            <i class="icofont-quote-right"></i>
+                
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 testimonial-wrap offset-lg-6">
+                        <Slider {...settings}>
+                            {testimonial.map((item, index) => {
+                                return (
+                                    <div class="testimonial-block">
+                                        <div class="client-info ">
+                                            <h4>{item.title}</h4>
+                                            <span>{item.author}</span>
+                                        </div>
+                                        <p>
+                                            {item.content}
+                                        </p>
+                                        <i class="icofont-quote-right"></i>
+                                        
+                                    </div>
+                                );
+                            })}
+                        </Slider>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </section>
     );

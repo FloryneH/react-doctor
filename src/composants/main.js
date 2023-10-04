@@ -16,7 +16,7 @@ function MainContent() {
       <Header />
       <Navbar />
       <main>
-        <PageTitle />
+        <PageTitle {...{ subtitle: 'About Us', title: 'About Us' }}/>
 
         <section class="section about-page">
           <div class="container">
@@ -33,7 +33,7 @@ function MainContent() {
         </section>
 
         <FetaurePage />
-        <Awards />
+        <Awards {...{ title: 'Our Doctors achievements ' }} />
         <Team />
         <Testimonial />
 

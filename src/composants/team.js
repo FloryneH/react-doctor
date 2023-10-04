@@ -6,6 +6,28 @@ import team3 from '../assets/images/team/3.jpg';
 import team4 from '../assets/images/team/4.jpg';
 
 function Team() {
+    const team = [
+        {
+            img: team1,
+            name: 'John Marshal',
+            position: 'Internist, Emergency Physician',
+        },
+        {
+            img: team2,
+            name: 'Marshal Root',
+            position: 'Surgeon, Сardiologist',
+        },
+        {
+            img: team3,
+            name: 'Siamon john',
+            position: 'Internist, General Practitioner',
+        },
+        {
+            img: team4,
+            name: 'Rishat Ahmed',
+            position: 'Orthopedic Surgeon',
+        }
+    ]
 	return (
 		<section class="section team">
             <div class="container">
@@ -20,48 +42,20 @@ function Team() {
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-block mb-5 mb-lg-0">
-                            <img src={team1} alt="" class="img-fluid w-100"/>
+                    {team.map((item, index) => {
+                        return (
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="team-block mb-5 mb-lg-0">
+                                    <img src={item.img} alt="" class="img-fluid w-100"/>
 
-                            <div class="content">
-                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">John Marshal</a></h4>
-                                <p>Internist, Emergency Physician</p>
+                                    <div class="content">
+                                        <h4 class="mt-4 mb-0"><a href="doctor-single.html">{item.name}</a></h4>
+                                        <p>{item.position}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-block mb-5 mb-lg-0">
-                            <img src={team2} alt="" class="img-fluid w-100"/>
-
-                            <div class="content">
-                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Marshal Root</a></h4>
-                                <p>Surgeon, Сardiologist</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-block mb-5 mb-lg-0">
-                            <img src={team3} alt="" class="img-fluid w-100"/>
-
-                            <div class="content">
-                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Siamon john</a></h4>
-                                <p>Internist, General Practitioner</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team-block">
-                            <img src={team4} alt="" class="img-fluid w-100"/>
-
-                            <div class="content">
-                                <h4 class="mt-4 mb-0"><a href="doctor-single.html">Rishat Ahmed</a></h4>
-                                <p>Orthopedic Surgeon</p>
-                            </div>
-                        </div>
-                    </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

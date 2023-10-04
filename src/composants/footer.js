@@ -4,7 +4,7 @@ import logo from '../assets/images/logo.png';
 
 function Footer() {
   return (
-    <footer>
+    <footer class="footer section gray-bg">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mr-auto col-sm-6">
