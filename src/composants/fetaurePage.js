@@ -28,15 +28,15 @@ function FetaurePage() {
         }
     ]
     return (
-        <section class="fetaure-page ">
-            <div class="container">
-                <div class="row">
+        <section className="fetaure-page ">
+            <div className="container">
+                <div className="row">
                     {features.map((feature, index) => {
                         return (
-                            <div class="col-lg-3 col-md-6">
-                                <div class="about-block-item mb-5 mb-lg-0">
-                                    <img src={feature.icon} alt="" class="img-fluid w-100"/>
-                                    <h4 class="mt-3">{feature.title}</h4>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="about-block-item mb-5 mb-lg-0">
+                                    <img src={feature.icon} alt="" className="img-fluid w-100"/>
+                                    <h4 className="mt-3">{feature.title}</h4>
                                     <p>{feature.content}</p>
                                 </div>
                             </div>

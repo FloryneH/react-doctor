@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Header from './header';
 import logo from '../assets/images/logo.png';
-import { Dropdown } from 'bootstrap';
+
 
 function Navbar() {
     const menuItems = [
         {
             title: 'Home',
-            url: '#',
+            url: '/Home',
         },
         {
             title: 'About',
-            url:'#'
+            url:'/About',
         },
         {
             title: 'Services',
-            url: '#',
+            url: '/Services',
         },
         {
             title: 'Department',
@@ -22,11 +23,11 @@ function Navbar() {
             subMenu:[
                 {
                     title: 'Departments',
-                    url: '#',
+                    url: '/Departments',
                 },
                 {
                     title: 'Department Single',
-                    url: '#',
+                    url: '/Department-Single',
                 }
             ]
         },
@@ -36,15 +37,15 @@ function Navbar() {
             subMenu:[
                 {
                     title: 'Doctors',
-                    url: '#',
+                    url: '/Doctors',
                 },
                 {
                     title: 'Doctor Single',
-                    url: '#',
+                    url: '/Doctor-Single',
                 },
                 {
                     title: 'Appointment',
-                    url: '#',
+                    url: '/Appoinment',
                 }
             ]
         },
@@ -54,61 +55,76 @@ function Navbar() {
             subMenu:[
                 {
                     title: 'Blog Width Sidebar',
-                    url: '#',
+                    url: '/BlogSidebar',
                 },
                 {
                     title: 'Blog Single',
-                    url: '#',
+                    url: '/BlogSingle',
                 }
             ]
         },
         {
             title: 'Contact',
-            url: '#',
+            url: '/Contact',
         }
     ];
+
+    const [scrolling, setScrolling] = useState(false);
+    const yPosition = useRef(window.scrollY);
+    const listenScrollEvent = () => {
+        window.scrollY > yPosition.current ? setScrolling(true) : setScrolling(false);
+        yPosition.current = window.scrollY;
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenScrollEvent);
+        return () => {
+            window.removeEventListener('scroll', listenScrollEvent);
+        }
+    }, []);
+
     return (
-        <nav class="navbar navbar-expand-lg navigation" id="navbar">
-            <div className="container ">
-                <a className="navbar-brand" href="index.html">
-                    <img src={logo} alt="" className="img-fluid" />
-                </a>
-                <div className="collapse navbar-collapse" id="navbarmain">
-                    <ul className="navbar-nav ml-auto">
-                        {menuItems.map((menu, index) => {
-                            return (
-                                <li className="nav-item dropdown" key={index}>
-                                    <a
-                                        className="nav-link dropdown-toggle"
-                                        href={menu.url}
-                                        id={`navbarDropdown${index}`}
-                                        role="button"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                    >
-                                        {menu.title}
-                                    </a>
-                                    {menu.subMenu && (
-                                        <div
-                                            className="dropdown-menu"
-                                            aria-labelledby={`navbarDropdown${index}`}
+        <nav className={`navbar navbar-expand-lg navigation fixed-top p-0 d-flex flex-column`}
+            style={{
+            top: scrolling ? '-200px' : '0',
+            transition: 'top 0.3s ease-in-out',
+        }} id="navbar">
+            <Header />
+            <div className=" w-100 bg-white m-0">
+                <div className="container d-flex">
+                    <a className="navbar-brand" href="index.html">
+                        <img src={logo} alt="" className="img-fluid" />
+                    </a>
+                    <div className="collapse navbar-collapse" id="navbarmain">
+                        <ul className="navbar-nav ml-auto">
+                            {menuItems.map((menu, index) => {
+                                return (
+                                    <li className="nav-item dropdown" key={index}>
+                                        <a
+                                            className="nav-link dropdown-toggle"
+                                            href={menu.url}
+                                            id={`navbarDropdown${index}`}
+                                            role="button"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
                                         >
-                                            {menu.subMenu.map((subMenuItem, subIndex) => (
-                                                <a
-                                                    className="dropdown-item"
-                                                    href={subMenuItem.url}
-                                                    key={subIndex}
-                                                >
-                                                    {subMenuItem.title}
-                                                </a>
-                                            ))}
-                                        </div>
-                                    )}
-                                </li>
-                            );
-                        })}
-                    </ul>
+                                            {menu.title}
+                                        </a>
+                                        {menu.subMenu && (
+                                            <div className="dropdown-menu" aria-labelledby={`navbarDropdown${index}`} >
+                                                {menu.subMenu.map((subMenuItem, subIndex) => (
+                                                    <a className="dropdown-item" href={subMenuItem.url} key={subIndex}>
+                                                        {subMenuItem.title}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -116,42 +132,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-{/* <div class="collapse navbar-collapse" id="navbarmain">
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i class="icofont-thin-down"></i></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                <li><a class="dropdown-item" href="department.html">Departments</a></li>
-                <li><a class="dropdown-item" href="department-single.html">Department Single</a></li>
-            </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                <li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
-                <li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
-                <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
-            </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="blog-sidebar.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="icofont-thin-down"></i></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                <li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
-
-                <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
-            </ul>
-        </li>
-
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-    </ul>
-</div> */}

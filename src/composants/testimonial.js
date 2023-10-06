@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import '../plugins/slick-carousel/slick/slick.css';
 import '../plugins/slick-carousel/slick/slick-theme.css';
 
 
-function PageTitle() {
+function PageTitle({title}) {
     const testimonial = [
         {
             title: 'Amazing service !',
@@ -76,31 +76,31 @@ function PageTitle() {
     };
 
     return (
-        <section class="section testimonial">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-6">
-                        <div class="section-title">
-                            <h2 class="mb-4">What they say about us</h2>
-                            <div class="divider  my-4"></div>
+        <section className="section testimonial">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6 offset-lg-6">
+                        <div className="section-title">
+                            <h2 className="mb-4">{title}</h2>
+                            <div className="divider  my-4"></div>
                         </div>
                     </div>
                 </div>
                 
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 testimonial-wrap offset-lg-6">
+                    <div className="row align-items-center">
+                        <div className="col-lg-6 testimonial-wrap offset-lg-6">
                         <Slider {...settings}>
                             {testimonial.map((item, index) => {
                                 return (
-                                    <div class="testimonial-block">
-                                        <div class="client-info ">
+                                    <div className="testimonial-block">
+                                        <div className="client-info ">
                                             <h4>{item.title}</h4>
                                             <span>{item.author}</span>
                                         </div>
                                         <p>
                                             {item.content}
                                         </p>
-                                        <i class="icofont-quote-right"></i>
+                                        <i className="icofont-quote-right"></i>
                                         
                                     </div>
                                 );
