@@ -36,26 +36,76 @@ function About() {
         }
     ]
 
+    const propsPageTitle = {
+        subtitle:'About Us',
+        title:'About Us',
+    }
+
+    const propsDescription = {
+        title:'Personal care for your healthy living',
+        content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quod laborum alias. Vitae dolorum, officia sit! Saepe ullam facere at, consequatur incidunt, quae esse, quis ut reprehenderit dignissimos, libero delectus.'
+    }
+
+    const propsFeaturesCard = {
+        rowClass:"row",
+        colClass:"col-lg-3 col-md-6",
+        blockClass:"about-block-item mb-5 mb-lg-0",
+        aDisplay:"d-none",
+    }
+
+    const propsTeam = {
+        title:'Meet Our Specialist',
+        content:'Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles'
+    }
+
+    const testimonial = [
+        {
+            title: 'Amazing service !',
+            author: 'John Partho',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Expert doctors !',
+            author: 'Mullar Sarth',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Good Support !',
+            author: 'Kolis Mullar',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Nice Environment !',
+            author: 'Partho Sarothi',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        },
+        {
+            title: 'Modern Service !',
+            author: 'Kolis Mullar',
+            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
+        }
+    ];
+
+    const propsTestimonial = {
+        title:'What they say about us',
+        carrousel:true,
+    }
+
     return (
         <main style={{ marginTop: '135.6px' }}>
             <PageTitle 
-                subtitle='About Us'
-                title='About Us'
+                propsPageTitle={propsPageTitle}
             />
 
             <Description
-                title='Personal care for your healthy living'
-                content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quod laborum alias. Vitae dolorum, officia sit! Saepe ullam facere at, consequatur incidunt, quae esse, quis ut reprehenderit dignissimos, libero delectus.'
+                propsDescription={propsDescription}
             />
             
             <section className="fetaure-page ">
                 <div className="container">
                     <FeaturesCard 
-                        rowClass="row"
                         features={featuresAbout}
-                        colClass="col-lg-3 col-md-6"
-                        blockClass="about-block-item mb-5 mb-lg-0"
-                        aDisplay="d-none"
+                        propsFeaturesCard={propsFeaturesCard}
                     />
                 </div>
             </section>
@@ -65,12 +115,12 @@ function About() {
             />
 
             <Team
-                title='Meet Our Specialist'
-                content='Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles'
+                propsTeam={propsTeam}
             />
 
             <Testimonial
-                title='What they say about us'
+                testimonial={testimonial}
+                propsTestimonial={propsTestimonial}
             />
         </main>
     );

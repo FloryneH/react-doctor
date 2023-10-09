@@ -45,27 +45,39 @@ function Services() {
         },
     ]
 
+    const propsPageTitle = {
+        subtitle:'Our services',
+        title:'What We Do',
+    }
+
+    const propsFeaturesCard = {
+        rowClass:"row mt-5",
+        colClass:"col-lg-4 col-md-6 col-sm-6",
+        blockClass:"service-block mb-5",
+        aDisplay:"d-none",
+    }
+
+    const propsCta = {
+        title:'We are pleased to offer you the ',
+        colorfulTitle:'chance to have the healthy',
+        buttonContent:'Get Appoinement'
+    }
+
     return (
         <main style={{ marginTop: '135.6px' }}>
             <PageTitle 
-                subtitle='Our services'
-                title='What We Do'
+                propsPageTitle={propsPageTitle}
             />
             <section className="fetaure-page ">
                 <div className="container">
                     <FeaturesCard 
                         features={featuresServices}
-                        rowClass="row mt-5" 
-                        colClass="col-lg-4 col-md-6 col-sm-6"
-                        blockClass="service-block mb-5"
-                        aDisplay="d-none"
+                        propsFeaturesCard={propsFeaturesCard}
                     />
                 </div>
             </section>
             <Cta 
-                title='We are pleased to offer you the '
-                colorfulTitle='chance to have the healthy'
-                buttonContent='Get Appoinement'
+                propsCta={propsCta}
             />
         </main>
     );

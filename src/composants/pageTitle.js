@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-function PageTitle({ subtitle, title, }) {
+function PageTitle( { propsPageTitle } ) {
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
-        setClicked(!clicked);
+        setClicked((prevState) => {
+            return !prevState
+        });
     };
 
     return (
@@ -13,8 +15,8 @@ function PageTitle({ subtitle, title, }) {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="block text-center">
-                            <span className={`text-white ${clicked ? 'clicked' : ''}`}>{clicked ? 'drink coffee' :  subtitle}</span>
-                            <h1 className={`text-capitalize mb-5 text-lg ${clicked ? 'clicked' : ''}`}>{clicked ? '☕' : title}</h1>
+                            <span className={`text-white ${clicked ? 'clicked' : ''}`}>{clicked ? 'drink coffee' :  propsPageTitle.subtitle}</span>
+                            <h1 className={`text-capitalize mb-5 text-lg ${clicked ? 'clicked' : ''}`}>{clicked ? '☕' : propsPageTitle.title}</h1>
                         </div>
                     </div>
                 </div>

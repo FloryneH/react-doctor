@@ -4,34 +4,7 @@ import '../plugins/slick-carousel/slick/slick.css';
 import '../plugins/slick-carousel/slick/slick-theme.css';
 
 
-function PageTitle({title}) {
-    const testimonial = [
-        {
-            title: 'Amazing service !',
-            author: 'John Partho',
-            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
-        },
-        {
-            title: 'Expert doctors !',
-            author: 'Mullar Sarth',
-            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
-        },
-        {
-            title: 'Good Support !',
-            author: 'Kolis Mullar',
-            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
-        },
-        {
-            title: 'Nice Environment !',
-            author: 'Partho Sarothi',
-            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
-        },
-        {
-            title: 'Modern Service !',
-            author: 'Kolis Mullar',
-            content: 'They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat. Quibusdam laboriosam eveniet nostrum nemo commodi numquam quod.'
-        }
-    ];
+function PageTitle({ testimonial, propsTestimonial }) {
     
     const settings = {
         dots: true,
@@ -81,7 +54,7 @@ function PageTitle({title}) {
                 <div className="row">
                     <div className="col-lg-6 offset-lg-6">
                         <div className="section-title">
-                            <h2 className="mb-4">{title}</h2>
+                            <h2 className="mb-4">{propsTestimonial.title}</h2>
                             <div className="divider  my-4"></div>
                         </div>
                     </div>

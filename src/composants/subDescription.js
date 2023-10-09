@@ -1,13 +1,13 @@
 import React from 'react';
 
-function SubDescription({ title, content }) {
+function SubDescription({ propsSubDescription }) {
     return (
         <div class="row justify-content-center">
 			<div class="col-lg-7 text-center">
 				<div class="section-title">
-					<h2>{title}</h2>
+					<h2>{propsSubDescription.title}</h2>
 					<div class="divider mx-auto my-4"></div>
-					<p>{content}</p>
+					<p>{propsSubDescription.content}</p>
 				</div>
 			</div>
 		</div>

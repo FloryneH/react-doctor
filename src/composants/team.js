@@ -5,7 +5,7 @@ import team2 from '../assets/images/team/2.jpg';
 import team3 from '../assets/images/team/3.jpg';
 import team4 from '../assets/images/team/4.jpg';
 
-function Team({ title , content }) {
+function Team({ propsTeam }) {
     const team = [
         {
             img: team1,
@@ -34,9 +34,9 @@ function Team({ title , content }) {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <div className="section-title text-center">
-                            <h2 className="mb-4">{title}</h2>
+                            <h2 className="mb-4">{propsTeam.title}</h2>
                             <div className="divider mx-auto my-4"></div>
-                            <p>{content}</p>
+                            <p>{propsTeam.content}</p>
                         </div>
                     </div>
                 </div>

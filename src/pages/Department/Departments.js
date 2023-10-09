@@ -45,25 +45,37 @@ function Departments() {
         },
     ]
 
+    const propsPageTitle = {
+        subtitle: 'All Department',
+        title: 'Care Department'
+    }
+
+    const propsSubDescription = {
+        title: 'Award winning patient care',
+        content: 'Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.'
+    }
+
+    const propsFeaturesCard = {
+        rowClass:'row',
+        colClass:'col-lg-4 col-md-6',
+        blockClass:'department-block mb-5',
+        lien:'Learn More'
+    }
+
     return (
         <main style={{ marginTop: '135.6px' }}>
             <PageTitle
-                subtitle='All Department'
-                title='Care Department'
+                propsPageTitle={propsPageTitle}
             />
             <section class="section service-2">
                 <div class="container">
                     <SubDescription
-                        title='Award winning patient care'
-                        content='Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.'
+                        propsSubDescription={propsSubDescription}
                     />
-                        <FeaturesCard
-                            features={featuresDepartments}
-                            rowClass='row'
-                            colClass='col-lg-4 col-md-6'
-                            blockClass='department-block mb-5'
-                            aDisplay='read-more'
-                        />
+                    <FeaturesCard
+                        propsFeaturesCard={propsFeaturesCard}
+                        features={featuresDepartments}
+                    />
                 </div>
             </section>
         </main>

@@ -1,17 +1,21 @@
 import React from 'react';
 
-function FeaturesCard({features, colClass, blockClass, rowClass, aDisplay}) {
+function FeaturesCard({ propsFeaturesCard, features }) {
     
     return (
-        <div className={rowClass}>
+        <div className={propsFeaturesCard.rowClass}>
             {features.map((feature, index) => {
                 return (
-                    <div className={colClass}>
-                        <div className={blockClass}>
+                    <div className={propsFeaturesCard.colClass}>
+                        <div className={propsFeaturesCard.blockClass}>
                             <img src={feature.icon} alt="" className="img-fluid w-100"/>
                             <h4 className="mt-4 mb-2 title-color">{feature.title}</h4>
                             <p className="mb-4">{feature.content}</p>
-                            <a href="department-single.html" class={aDisplay}>Learn More  <i class="icofont-simple-right ml-2"></i></a>
+                            {propsFeaturesCard.lien ? (
+                                <a href="department-single.html" className='read-more'>
+                                    {propsFeaturesCard.lien}<i className="icofont-simple-right ml-2"></i>
+                                </a>
+                            ) : null}
                         </div>
                     </div>
                 );
