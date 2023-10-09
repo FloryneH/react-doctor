@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function PageTitle({ subtitle, title }) {
+function PageTitle({ subtitle, title, }) {
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
         setClicked(!clicked);

@@ -23,7 +23,7 @@ import '../css/style.css';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/Home',
     element: <Home />,
   },
   {
