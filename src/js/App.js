@@ -1,7 +1,8 @@
 // App.js
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Layout from '../pages/Layout';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Services from '../pages/Services';
@@ -21,61 +22,27 @@ import '../plugins/bootstrap/css/bootstrap.min.css';
 import '../plugins/icofont/icofont.min.css';
 import '../css/style.css';
 
-const router = createBrowserRouter([
-  {
-    path: '/Home',
-    element: <Home />,
-  },
-  {
-    path: '/About',
-    element: <About />,
-  },
-  {
-    path: '/Services',
-    element: <Services />,
-  },  
-  {
-    path: '/Departments',
-    element: <Departments />,
-  },
-  {
-    path: '/Department-Single',
-    element: <DepartmentSingle />,
-  },
-  {
-    path: '/Doctors',
-    element: <Doctors />,
-  },
-  {
-    path: '/Doctor-Single',
-    element: <DoctorSingle />,
-  },
-  {
-    path: '/Appoinment',
-    element: <Appoinment />,
-  },
-  {
-    path: '/BlogSidebar',
-    element: <BlogSidebar />,
-  },
-  {
-    path: '/BlogSingle',
-    element: <BlogSingle />,
-  },
-  {
-    path: '/Contact',
-    element: <Contact />,
-  }
-])
 function App() {
   return (
-    <section>
-      <Navbar />
-
-      <RouterProvider router={router} />
-      
-      <Footer />
-    </section>
+    <>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Layout/>}>
+                <Route index element={<Home/>}/>
+                <Route path='/About' element={<About/>}/>
+                <Route path='/Services' element={<Services/>}/>
+                <Route path='/Departments' element={<Departments/>}/>
+                <Route path='/Department-Single' element={<DepartmentSingle/>}/>
+                <Route path='/Doctors' element={<Doctors/>}/>
+                {/* <Route path='/Doctor-Single' element={<DoctorSingle/>}/>
+                <Route path='/Appoinment' element={<Appoinment/>}/>
+                <Route path='/BlogSidebar' element={<BlogSidebar/>}/>
+                <Route path='/BlogSingle' element={<BlogSingle/>}/>
+                <Route path='/Contact' element={<Contact/>}/> */}
+            </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

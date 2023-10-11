@@ -56,9 +56,6 @@ function Departments() {
     }
 
     const propsFeaturesCard = {
-        rowClass:'row',
-        colClass:'col-lg-4 col-md-6',
-        blockClass:'department-block mb-5',
         lien:'Learn More'
     }
 
@@ -67,8 +64,8 @@ function Departments() {
             <PageTitle
                 propsPageTitle={propsPageTitle}
             />
-            <section class="section service-2">
-                <div class="container">
+            <section className="section service-2">
+                <div className="container">
                     <SubDescription
                         propsSubDescription={propsSubDescription}
                     />

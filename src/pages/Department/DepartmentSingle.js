@@ -59,18 +59,18 @@ function Departments() {
             <PageTitle
                 propsPageTitle={propsPageTitle}
             />
-            <section class="section department-single">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="department-img">
-                                <img src={bg} alt="" class="img-fluid"/>
+            <section className="section department-single">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="department-img">
+                                <img src={bg} alt="" className="img-fluid"/>
                             </div>
                         </div>
                     </div>
                 
-                    <div class="row">
-                        <div class="col-lg-8">
+                    <div className="row">
+                        <div className="col-lg-8">
                             <Paragraph
                                 propsParagraphe={propsParagraphe}
                             />

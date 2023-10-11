@@ -51,10 +51,6 @@ function Services() {
     }
 
     const propsFeaturesCard = {
-        rowClass:"row mt-5",
-        colClass:"col-lg-4 col-md-6 col-sm-6",
-        blockClass:"service-block mb-5",
-        aDisplay:"d-none",
     }
 
     const propsCta = {

@@ -11,6 +11,11 @@ import about2 from '../assets/images/about/about-2.jpg';
 import about3 from '../assets/images/about/about-3.jpg';
 import about4 from '../assets/images/about/about-4.jpg';
 
+import yang from '../assets/images/team/yang.jpg';
+import grey from '../assets/images/team/grey.jpg';
+import sheperd from '../assets/images/team/sheperd.jpg';
+import sloan from '../assets/images/team/sloan.jpg';
+
 function About() {
 
     const featuresAbout = [
@@ -55,7 +60,29 @@ function About() {
 
     const propsTeam = {
         title:'Meet Our Specialist',
-        content:'Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles'
+        content:'Today’s users expect effortless experiences. Don’t let essential people and processes stay stuck in the past. Speed it up, skip the hassles',
+        team : [
+            {
+                name: 'Cristina Yang',
+                img: yang,
+                position: 'Cardiology'
+            },
+            {
+                name: 'Meredith Grey',
+                img: grey,
+                position: 'General Surgery'
+            },
+            {
+                name: 'Derek Shepherd',
+                img: sheperd,
+                position: 'Neurosurgery'
+            },
+            {
+                name: 'Mark Sloan',
+                img: sloan,
+                position: 'Plastic Surgery'
+            },
+        ]
     }
 
     const testimonial = [

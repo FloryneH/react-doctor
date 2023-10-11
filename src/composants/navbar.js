@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Header from './header';
 import logo from '../assets/images/logo.png';
 
@@ -7,7 +8,7 @@ function Navbar() {
     const menuItems = [
         {
             title: 'Home',
-            url: '/Home',
+            url: '/',
         },
         {
             title: 'About',
@@ -19,7 +20,6 @@ function Navbar() {
         },
         {
             title: 'Department',
-            url: '#',
             subMenu:[
                 {
                     title: 'Departments',
@@ -33,7 +33,6 @@ function Navbar() {
         },
         {
             title: 'Doctors',
-            url: '#',
             subMenu:[
                 {
                     title: 'Doctors',
@@ -51,7 +50,6 @@ function Navbar() {
         },
         {
             title: 'Blog',
-            url: '#',
             subMenu:[
                 {
                     title: 'Blog Width Sidebar',
@@ -100,23 +98,23 @@ function Navbar() {
                             {menuItems.map((menu, index) => {
                                 return (
                                     <li className="nav-item dropdown" key={index}>
-                                        <a
+                                        <Link
                                             className="nav-link dropdown-toggle"
-                                            href={menu.url}
+                                            to={menu.url}
                                             id={`navbarDropdown${index}`}
                                             role="button"
                                             data-toggle="dropdown"
                                             aria-haspopup="true"
                                             aria-expanded="false"
                                         >
-                                            {menu.title}
-                                        </a>
+                                        {menu.title}
+                                        </Link>
                                         {menu.subMenu && (
                                             <div className="dropdown-menu" aria-labelledby={`navbarDropdown${index}`} >
                                                 {menu.subMenu.map((subMenuItem, subIndex) => (
-                                                    <a className="dropdown-item" href={subMenuItem.url} key={subIndex}>
+                                                    <Link className="dropdown-item" to={subMenuItem.url} key={subIndex}>
                                                         {subMenuItem.title}
-                                                    </a>
+                                                    </Link>
                                                 ))}
                                             </div>
                                         )}
