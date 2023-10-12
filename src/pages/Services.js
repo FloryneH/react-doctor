@@ -51,7 +51,12 @@ function Services() {
     }
 
     const propsFeaturesCard = {
+        colClass:"col-lg-4 col-md-6 col-sm-6",
+        blockClass:"service-block mb-5",
     }
+
+    const propsRs = [
+    ]
 
     const propsCta = {
         title:'We are pleased to offer you the ',
@@ -64,12 +69,15 @@ function Services() {
             <PageTitle 
                 propsPageTitle={propsPageTitle}
             />
-            <section className="fetaure-page ">
+            <section class="section service-2">
                 <div className="container">
-                    <FeaturesCard 
-                        features={featuresServices}
-                        propsFeaturesCard={propsFeaturesCard}
-                    />
+                    <div class="row">
+                        <FeaturesCard 
+                            features={featuresServices}
+                            propsFeaturesCard={propsFeaturesCard}
+                            propsRs={propsRs}
+                        />
+                    </div>
                 </div>
             </section>
             <Cta 

@@ -52,10 +52,8 @@ function About() {
     }
 
     const propsFeaturesCard = {
-        rowClass:"row",
         colClass:"col-lg-3 col-md-6",
         blockClass:"about-block-item mb-5 mb-lg-0",
-        aDisplay:"d-none",
     }
 
     const propsTeam = {
@@ -84,6 +82,9 @@ function About() {
             },
         ]
     }
+
+    const propsRs = [
+    ]
 
     const testimonial = [
         {
@@ -130,10 +131,13 @@ function About() {
             
             <section className="fetaure-page ">
                 <div className="container">
-                    <FeaturesCard 
-                        features={featuresAbout}
-                        propsFeaturesCard={propsFeaturesCard}
-                    />
+                    <div class="row">
+                                <FeaturesCard 
+                                    features={featuresAbout}
+                                    propsFeaturesCard={propsFeaturesCard}
+                                    propsRs={propsRs}
+                                ></FeaturesCard>
+                    </div>
                 </div>
             </section>
 

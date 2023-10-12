@@ -56,8 +56,13 @@ function Departments() {
     }
 
     const propsFeaturesCard = {
+        colClass:'col-lg-4 col-md-6',
+        blockClass:'department-block mb-5',
         lien:'Learn More'
     }
+
+    const propsRs = [
+    ]
 
     return (
         <main style={{ marginTop: '135.6px' }}>
@@ -69,10 +74,13 @@ function Departments() {
                     <SubDescription
                         propsSubDescription={propsSubDescription}
                     />
-                    <FeaturesCard
-                        propsFeaturesCard={propsFeaturesCard}
-                        features={featuresDepartments}
-                    />
+                    <div className="row">
+                        <FeaturesCard
+                            propsFeaturesCard={propsFeaturesCard}
+                            features={featuresDepartments}
+                            propsRs={propsRs}
+                        />
+                    </div>
                 </div>
             </section>
         </main>

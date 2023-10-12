@@ -17,6 +17,7 @@ function Departments() {
         title: 'Medecine and Health',
         subContent:'Age forming covered you entered the examine. Blessing scarcely confined her contempt wondered shy. Dashwoods contented sportsmen at up no convinced cordially affection.',
         content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum recusandae dolor autem laudantium, quaerat vel dignissimos. Magnam sint suscipit omnis eaque unde eos aliquam distinctio, quisquam iste, itaque possimus . Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet alias modi eaque, ratione recusandae cupiditate dolorum repellendus iure eius rerum hic minus ipsa at, corporis nesciunt tempore vero voluptas. Tempore.',
+        levelTitle: 'h3',
     }
 
     const propsListe = {
@@ -29,7 +30,9 @@ function Departments() {
             'Critical Care Medicine Specialists',
             'Emergency Assistance',
         ],
-        buttonContent:'Book An Appointment'
+        buttonContent:'Book An Appointment',
+        h3: true,
+        divClass: 'department-content mt-5'
     }
 
     const propsSidebarWidget = {
@@ -51,7 +54,9 @@ function Departments() {
         infos:{
             message :'Need Urgent Help?',
             number:'+23-4565-65768'
-        }
+        },
+        ulClass:'list-unstyled',
+        h3Class:''
     }
 
     return (
@@ -71,16 +76,22 @@ function Departments() {
                 
                     <div className="row">
                         <div className="col-lg-8">
-                            <Paragraph
-                                propsParagraphe={propsParagraphe}
-                            />
+                            <div className="department-content mt-5">
+                                <Paragraph
+                                    propsParagraphe={propsParagraphe}
+                                />
+                            </div>
                             <Liste
                                 propsListe={propsListe}
                             />
                         </div>
-                        <SidebarWidget
-                            propsSidebarWidget={propsSidebarWidget}
-                        />
+                        <div className="col-lg-4">
+                            <div className="sidebar-widget schedule-widget mt-5">
+                                <SidebarWidget
+                                    propsSidebarWidget={propsSidebarWidget}
+                                />
+                            </div>
+                        </div>
                     </div>  
                 </div>
             </section>

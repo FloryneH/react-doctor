@@ -16,7 +16,7 @@ import Asheperd from '../../assets/images/team/Asheperd.jpg';
 import torres from '../../assets/images/team/toress.jpg';
 import sloan from '../../assets/images/team/sloan.jpg';
 
-function Departments() {
+function Doctors() {
 
     const propsPageTitle = {
         subtitle: 'All Doctors',
@@ -163,4 +163,4 @@ function Departments() {
     );
 }
 
-export default Departments;
+export default Doctors;

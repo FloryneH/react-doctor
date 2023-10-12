@@ -15,9 +15,6 @@ import BlogSidebar from '../pages/Blog/BlogSidebar';
 import BlogSingle from '../pages/Blog/BlogSingle';
 import Contact from '../pages/Contact';
 
-import Navbar from '../composants/navbar';
-import Footer from '../composants/footer';
-
 import '../plugins/bootstrap/css/bootstrap.min.css';
 import '../plugins/icofont/icofont.min.css';
 import '../css/style.css';
@@ -34,11 +31,11 @@ function App() {
                 <Route path='/Departments' element={<Departments/>}/>
                 <Route path='/Department-Single' element={<DepartmentSingle/>}/>
                 <Route path='/Doctors' element={<Doctors/>}/>
-                {/* <Route path='/Doctor-Single' element={<DoctorSingle/>}/>
+                <Route path='/Doctor-Single' element={<DoctorSingle/>}/>
                 <Route path='/Appoinment' element={<Appoinment/>}/>
                 <Route path='/BlogSidebar' element={<BlogSidebar/>}/>
                 <Route path='/BlogSingle' element={<BlogSingle/>}/>
-                <Route path='/Contact' element={<Contact/>}/> */}
+                <Route path='/Contact' element={<Contact/>}/>
             </Route>
         </Routes>
       </BrowserRouter>
