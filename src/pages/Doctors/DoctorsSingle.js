@@ -42,14 +42,16 @@ function DoctorsSingle() {
         content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo recusandae veritatis minus optio quod obcaecati laborum temporibus, deleniti vero perferendis molestias, ducimus facilis, sunt minima. Tempora, amet quasi asperiores voluptas?',
         h2: true,
         btn: true,
-        classTitle: 'text-md'
+        classTitle: 'text-md',
+        divClass: 'divider my-4'
     }
 
     const propsParagraphe2 = {
         title: 'My skills',
         subContent:'',
         content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo recusandae veritatis minus optio quod obcaecati laborum temporibus, deleniti vero perferendis molestias, ducimus facilis, sunt minima. Tempora, amet quasi asperiores voluptas?',
-        classTitle: ''
+        classTitle: '',
+        divClass: 'divider my-4'
     }
 
     const propsQualifications = [

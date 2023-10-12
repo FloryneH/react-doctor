@@ -49,19 +49,6 @@ function Navbar() {
             ]
         },
         {
-            title: 'Blog',
-            subMenu:[
-                {
-                    title: 'Blog Width Sidebar',
-                    url: '/BlogSidebar',
-                },
-                {
-                    title: 'Blog Single',
-                    url: '/BlogSingle',
-                }
-            ]
-        },
-        {
             title: 'Contact',
             url: '/Contact',
         }

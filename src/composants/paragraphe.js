@@ -8,7 +8,7 @@ function Paragraph({ propsParagraphe }) {
             ) : <h3 className={propsParagraphe.classTitle}>{propsParagraphe.title}</h3>
             }
             
-            <div className="divider my-4"></div>
+            <div className={propsParagraphe.divClass}></div>
             <p className="lead">{propsParagraphe.subContent}</p>
             <p>{propsParagraphe.content}</p>
 

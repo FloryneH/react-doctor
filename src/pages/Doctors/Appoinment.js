@@ -57,7 +57,8 @@ function DoctorsSingle() {
                 type: 'Number',
                 placeholder: 'Phone Number'
             }
-        ]
+        ],
+        btn : false
     }
 
     return (
@@ -78,11 +79,13 @@ function DoctorsSingle() {
                                 <h2 class="text-color mt-3">+84 789 1256 </h2>
                             </div>
                         </div>
-
-                        <Form
-                            propsForm={propsForm}
-                        />
-
+                        <div class="col-lg-8">
+                            <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
+                                <Form
+                                    propsForm={propsForm}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

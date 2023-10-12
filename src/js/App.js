@@ -11,8 +11,6 @@ import DepartmentSingle from '../pages/Department/DepartmentSingle';
 import Doctors from '../pages/Doctors/Doctors';
 import DoctorSingle from '../pages/Doctors/DoctorsSingle';
 import Appoinment from '../pages/Doctors/Appoinment';
-import BlogSidebar from '../pages/Blog/BlogSidebar';
-import BlogSingle from '../pages/Blog/BlogSingle';
 import Contact from '../pages/Contact';
 
 import '../plugins/bootstrap/css/bootstrap.min.css';
@@ -33,8 +31,6 @@ function App() {
                 <Route path='/Doctors' element={<Doctors/>}/>
                 <Route path='/Doctor-Single' element={<DoctorSingle/>}/>
                 <Route path='/Appoinment' element={<Appoinment/>}/>
-                <Route path='/BlogSidebar' element={<BlogSidebar/>}/>
-                <Route path='/BlogSingle' element={<BlogSingle/>}/>
                 <Route path='/Contact' element={<Contact/>}/>
             </Route>
         </Routes>
